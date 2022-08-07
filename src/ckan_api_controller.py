@@ -1,11 +1,11 @@
 import requests
 import json
 from pprint import pprint
-from ckin_logger import logger
-from ckin_exceptions import CkinAPIConnectionError,CkinAPIResponseError
+from ckan_logger import logger
+from ckan_exceptions import CkanAPIConnectionError,CkanAPIResponseError
 
 
-class CkinController:
+class CkanController:
 
     def __init__(self, base_url: str, params: dict = None):
         self.base_url = base_url
@@ -27,12 +27,12 @@ class CkinController:
                     print(len(data['result']['records']))
                 else:
                     self.logger.error('Got invalid response from API. Status: %s',response.status_code)
-                    raise CkinAPIResponseError
+                    raise CkanAPIResponseError
 
                 response = requests.get(f'{self.base_url}{data["result"]["_links"]["next"]}')
                 data = json.loads(response.content.decode(decoder))
         except Exception:
-            self.logger.exception('Failed to connect Ckin API')
+            self.logger.exception('Failed to connect Ckan API')
             raise CkinAPIConnectionError
 
         return records
