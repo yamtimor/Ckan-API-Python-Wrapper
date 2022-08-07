@@ -1,1 +1,1 @@
-# Ckin-API-Python-wrapper
+# Ckan-API-Python-wrapper
