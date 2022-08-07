@@ -33,7 +33,7 @@ class CkanController:
                 data = json.loads(response.content.decode(decoder))
         except Exception:
             self.logger.exception('Failed to connect Ckan API')
-            raise CkinAPIConnectionError
+            raise CkanAPIConnectionError
 
         return records
 
