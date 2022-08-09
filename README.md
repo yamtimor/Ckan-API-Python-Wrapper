@@ -1,3 +1,3 @@
 # Ckan-API-Python-wrapper
-Ckan-API-Python-wrapper is a tool that extracts data from API's based on Ckan (Read more about Ckan at [ckan.org](https://ckan.org/)).
+Ckan-API-Python-wrapper is a tool that extracts data from Ckan's API's and transform the data into json or dataframe (Read more about Ckan at [ckan.org](https://ckan.org/)).
 
