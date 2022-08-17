@@ -26,7 +26,7 @@ class CkinController:
                     print(data['result']['_links']['next'])
                     print(len(data['result']['records']))
                 else:
-                    self.logger.error('Got invalid response from API. Status: %s',response.status_code)
+                    self.logger.error('Got invalid response from API. Status: %s',response.status_code).g
                     raise CkinAPIResponseError
 
                 response = requests.get(f'{self.base_url}{data["result"]["_links"]["next"]}')
@@ -40,27 +40,3 @@ class CkinController:
 
     def get_data(self):
         pass
-
-
-
-
-
-
-
-
-
-
-
-#
-# # extract
-# url = 'https://data.gov.il/api/3/action/datastore_search?'
-# res = requests.get(url)
-# data = res.text
-#
-# # transform
-# parse_json = json.loads(data)
-# col = parse_json['result']['fields']
-# columns = [c['id'] for c in col]
-#
-# # load
-# df = pd.DataFrame(parse_json['result']['records'],columns=columns)
