@@ -11,7 +11,6 @@ class CkanController:
         self.base_url = base_url
         self.params = params
         self.logger = logger
-        # self.records = list()
         self.api_uri = '/api/3/action/datastore_search'
 
     def request_data(self, decoder = 'utf-8'):
@@ -37,7 +36,10 @@ class CkanController:
 
         return records
 
+    def ckan_to_dataframe(self, data):
 
-    def get_data(self):
-        pass
-    # try to resolve merge issue
+        parse_json = json.loads(data)
+        col = parse_json['result']['fields']
+        columns = [c['id'] for c in col]
+        df = pd.DataFrame(parse_json['result']['records'], columns=columns)
+        return df
