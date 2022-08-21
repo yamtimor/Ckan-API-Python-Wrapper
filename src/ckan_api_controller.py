@@ -1,4 +1,5 @@
 import requests
+import pandas as pd
 import json
 from pprint import pprint
 from ckan_logger import logger
@@ -22,8 +23,8 @@ class CkanController:
                 if response.ok:
                     self.logger.info('Connected successfully to API')
                     records += data['result']['records']
-                    print(data['result']['_links']['next'])
-                    print(len(data['result']['records']))
+                    # print(data['result']['_links']['next'])
+                    # print(len(data['result']['records']))
                 else:
                     self.logger.error('Got invalid response from API. Status: %s',response.status_code)
                     raise CkanAPIResponseError
@@ -36,10 +37,8 @@ class CkanController:
 
         return records
 
-    def ckan_to_dataframe(self, data):
-
-        parse_json = json.loads(data)
-        col = parse_json['result']['fields']
-        columns = [c['id'] for c in col]
-        df = pd.DataFrame(parse_json['result']['records'], columns=columns)
+    @staticmethod
+    def ckan_to_dataframe(data):
+        # columns = data['result']['fields']
+        df = pd.DataFrame.from_records(data)
         return df
