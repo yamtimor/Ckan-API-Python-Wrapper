@@ -40,3 +40,4 @@ class CkanController:
 
     def get_data(self):
         pass
+    # try to resolve merge issue
