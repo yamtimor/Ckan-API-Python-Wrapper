@@ -5,7 +5,7 @@ from pathlib import Path
 file_path = Path(__file__)
 log_dir = file_path.parent.parent / 'log'
 log_dir.mkdir(exist_ok=True)
-file_name = log_dir / 'ckin-logger.log'
+file_name = log_dir / 'ckan-logger.log'
 
 logging.basicConfig(filename=file_name,
                     filemode='a',
@@ -13,6 +13,6 @@ logging.basicConfig(filename=file_name,
                     datefmt='%H:%M:%S',
                     level=logging.DEBUG)
 
-logging.info("Running ckin")
+logging.info("Running ckan")
 
 logger = logging.getLogger(__name__)
