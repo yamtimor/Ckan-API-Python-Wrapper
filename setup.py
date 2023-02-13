@@ -16,16 +16,16 @@ LONG_DESCRIPTION = 'Ckan-API-Python-Wrapper'
 
 # Setting up
 setup(
-    name = 'Ckan-API-Python-Wrapper',
-    version = VERSION,
-    author = 'Yam Timor',
-    description = DESCRIPTION,
-    long_description = long_description,
+    name='Ckan-API-Python-Wrapper',
+    version=VERSION,
+    author='Yam Timor',
+    description=DESCRIPTION,
+    long_description=long_description,
     packages=['Ckan-API-Python-Wrapper'],
     package_dir={'': 'src'},
-    install_requires = ['requests', 'json', 'pandas'],
-    license = 'MIT',
-    classifiers = [
+    install_requires=['requests', 'json', 'pandas'],
+    license='MIT',
+    classifiers=[
         'Development Status :: 1 - Alpha',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
