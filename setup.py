@@ -22,7 +22,7 @@ setup(
     description = DESCRIPTION,
     long_description = long_description,
     packages=['Ckan-API-Python-Wrapper'],
-    package_dir={'': 'src'}
+    package_dir={'': 'src'},
     install_requires = ['requests', 'json', 'pandas'],
     license = 'MIT',
     classifiers = [
