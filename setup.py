@@ -1,7 +1,6 @@
 from setuptools import setup
 import codecs
 import os
-
 from codecs import open
 from os import path
 
